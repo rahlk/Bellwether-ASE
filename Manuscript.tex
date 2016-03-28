@@ -1,0 +1,195 @@
+\documentclass{sig-alternate}
+%\usepackage{stfloats}
+\usepackage{tikz}
+  \def\firstcircle{(90:1.75cm) circle (2.5cm)}
+  \def\secondcircle{(210:1.75cm) circle (2.5cm)}
+  \def\thirdcircle{(330:1.75cm) circle (2.5cm)} 
+\usepackage{comment}
+\usepackage{cite}
+\usepackage{framed,graphicx,xcolor}
+\usepackage{multirow}
+\usepackage{rotating}
+%\usepackage{stfloats}
+
+\usepackage[shortlabels]{enumitem} 
+\usepackage{amsmath}
+\usepackage{ amssymb }
+\usepackage{url}
+\usepackage{balance}
+\newcommand{\bi}{\begin{itemize}}
+\newcommand{\ei}{\end{itemize}}
+\newcommand{\be}{\begin{enumerate}}
+\newcommand{\ee}{\end{enumerate}}
+\newcommand{\tion}[1]{\textsection\ref{sect:#1}}
+\newcommand{\fig}[1]{Figure~\ref{fig:#1}}
+\newcommand{\eq}[1]{Equation~\ref{eq:#1}}
+%\setlist{nolistsep,leftmargin=5mm}
+%\usepackage[pdftex]{graphicx}
+\usepackage{program}
+\newcommand{\Sample}{{\bf SAMPLE}}
+\newcommand{\PEEKING}{{\bf PEEKING2}}
+%\usepackage[table]{xcolor}
+\definecolor{darkgreen}{rgb}{0,0.3,0}
+\definecolor{Gray}{rgb}{0.88,1,1}
+\definecolor{Gray}{gray}{0.85}
+\definecolor{Blue}{RGB}{0,29,193}
+\usepackage{colortbl}
+\usepackage{picture}
+\usepackage{url}
+\usepackage{hyperref}
+%\usepackage{listings}
+\DeclareMathOperator*{\argmin}{arg\,min} 
+\DeclareMathOperator*{\argmax}{arg\,max}
+\definecolor{lightgray}{gray}{0.8}
+\definecolor{darkgray}{gray}{0.6}
+\definecolor{Gray}{gray}{0.95}
+\definecolor{LightGray}{gray}{0.975}
+
+\definecolor{Code}{rgb}{0,0,0}
+\definecolor{Decorators}{rgb}{0.5,0.5,0.5}
+\definecolor{Numbers}{rgb}{0.5,0,0}
+\definecolor{MatchingBrackets}{rgb}{0.25,0.5,0.5}
+\definecolor{Keywords}{rgb}{0,0,1}
+\definecolor{self}{rgb}{0,0,0}
+\definecolor{Strings}{rgb}{0,0.63,0}
+\definecolor{Comments}{rgb}{0,0.63,1}
+\definecolor{Comments}{rgb}{0.5,0.5,0.5}
+\definecolor{Backquotes}{rgb}{0,0,0}
+\definecolor{Classname}{rgb}{0,0,0}
+\definecolor{FunctionName}{rgb}{0,0,0}
+\definecolor{Operators}{rgb}{0,0,0}
+\definecolor{Background}{rgb}{1,1,1}
+\bibliographystyle{unsrt}
+ \definecolor{lavenderpink}{rgb}{0.98, 0.68, 0.82}
+ \definecolor{celadon}{rgb}{0.67, 0.88, 0.69}
+\newcommand{\G}{\cellcolor{green}}
+\newcommand{\Y}{\cellcolor{yellow}}
+
+\newcommand{\quart}[4]{\begin{picture}(80,4)%1
+{\color{black}\put(#3,2){\circle*{4}}\put(#1,2){\line(1,0){#2}}}\end{picture}}
+
+
+\definecolor{MyDarkBlue}{rgb}{0,0.08,0.45} 
+\newenvironment{changed}{\par\color{MyDarkBlue}}{\par}
+%\newenvironment{changed}{\par}{\par}
+
+\newcommand{\ADD}[1]{\textcolor{MyDarkBlue}{{\bf #1}}}
+\usepackage{times}
+\pagenumbering{arabic} 
+
+% \usepackage[svgnames]{xcolor}
+   \usepackage[framed]{ntheorem}
+\usepackage{framed}
+\usepackage{tikz}
+\usetikzlibrary{shadows}
+%\newtheorem{Lesson}{Lesson}
+\theoremclass{Lesson}
+\theoremstyle{break}
+
+% inner sep=10pt,
+\tikzstyle{thmbox} = [rectangle, rounded corners, draw=black,
+  fill=Gray!20,  drop shadow={fill=black, opacity=1}]
+\newcommand\thmbox[1]{%
+  \noindent\begin{tikzpicture}%
+  \node [thmbox] (box){%
+\begin{minipage}{.94\textwidth}%    
+      \vspace{-3mm}#1\vspace{-3mm}%
+    \end{minipage}%
+  };%
+  \end{tikzpicture}}
+
+\let\theoremframecommand\thmbox
+\newshadedtheorem{lesson}{Research answer}
+ 
+ 
+\begin{document}  
+
+\definecolor{shadecolor}{gray}{0.9}
+\conferenceinfo{ASE}{'16 Singapore, Singapore.}
+
+\title{  Exploring ``Bellwether'' Effect in Software Engineering}
+\numberofauthors{2} 
+\author{  
+\alignauthor
+Rahul~Krishna, Tim Menzies  \\
+       \affaddr{Computer Science, NC State, USA}\\
+       {\{i.m.ralk,~tim.menzies\}@gmail.com}
+\alignauthor
+Lucas Layman \\
+       \affaddr{Fraunhofer CESE, College Park, USA}\\ 
+       {llayman@cese.fraunhofer.org}
+\setlength{\columnsep}{7mm}}
+\maketitle
+
+\begin{abstract} 
+
+{\bf Categories/Subject Descriptors:} D.2 [Software Engineering]; I.2 [Artificial Intelligence];
+
+ 
+{\bf Keywords:} 
+\end{abstract}
+
+\section{Introduction}
+Numerous {\em local learning} results show that we
+should mistrust general conclusions (made over a
+wide population of projects) since they may not hold
+for projects.  Posnett et al.~\cite{posnet11}
+discuss {\em ecological inference} in software
+engineering, which is the concept that what holds
+for the entire population also holds for each
+individual.  They learn models at different levels
+of aggregation (modules, packages, files) and show
+that models that work at one level of aggregation
+can be sub-optimal at others.  For example, Yang et
+al.~\cite{yang11}, Bettenburg et
+al.~\cite{Bettenburg2012}, and Menzies et al.~\cite{me12d}
+all explore the generation of models using {\em all}
+data versus {\em local} samples that more specific
+to particular test cases. These papers report that
+better models (sometimes with much lower variance in
+their predictions) are generated from local
+information.
+These results have an unsettling effect on anyone
+struggling to propose policies for an organization.
+If all prior conclusions can change for the new
+project, or some small part of a project, how can
+any manager ever hope to propose and defend IT
+policies (e.g., when should some module be inspected,
+when should it be refactored, where to focus
+expensive testing procedures, etc.)?
+
+If we cannot {\em generalize} to all projects and all parts
+of current projects, perhaps a more achievable goal is to {\em
+stabilize} the pace of conclusion change.
+While it may be
+a fool's errand  and wait for  eternal and global SE
+conclusions, one possible approach is for organizations
+to declare $N$ prior projects as {\em reference projects},
+from which lessons learned will be transferred to new projects.
+In practice, using such reference sets requires three processes:
+
+\begin{enumerate}
+\item Finding the reference sets (this paper shows that finding
+ them may not be a too complex task, at least for defect prediction).
+ \item Recognizing when to update  the reference set. In practice,
+ this could be as simple as noting when predictions start failing for
+new projects---at which time, we would loop to point \#1.
+\item Transferring
+ lessons from the reference set to new projects.
+\end{enumerate}
+
+In this approach, the policies of the organization will be
+stable just as long as the reference set is not updated.
+In this paper, we do not address the pace of change in the reference set
+(that is left for future work).
+Rather, we focus on point \#3: transferring lessons from
+the reference set to new projects. To support this third point,
+we need to resolve the problems
+ that this paper addresses (data expressed in different terminology
+ cannot transfer till there is enough data to match old projects to new).
+ 
+\input{tex/Jur.tex}
+\balance
+\bibliographystyle{unsrt}
+\bibliography{References}
+\end{document}
