@@ -3,7 +3,7 @@
 \usepackage{tikz}
   \def\firstcircle{(90:1.75cm) circle (2.5cm)}
   \def\secondcircle{(210:1.75cm) circle (2.5cm)}
-  \def\thirdcircle{(330:1.75cm) circle (2.5cm)} 
+  \def\thirdcircle{(330:1.75cm) circle (2.5cm)}
 \usepackage{comment}
 \usepackage{cite}
 \usepackage{framed,graphicx,xcolor}
@@ -11,7 +11,7 @@
 \usepackage{rotating}
 %\usepackage{stfloats}
 
-\usepackage[shortlabels]{enumitem} 
+\usepackage[shortlabels]{enumitem}
 \usepackage{amsmath}
 \usepackage{ amssymb }
 \usepackage{url}
@@ -38,7 +38,7 @@
 \usepackage{url}
 \usepackage{hyperref}
 %\usepackage{listings}
-\DeclareMathOperator*{\argmin}{arg\,min} 
+\DeclareMathOperator*{\argmin}{arg\,min}
 \DeclareMathOperator*{\argmax}{arg\,max}
 \definecolor{lightgray}{gray}{0.8}
 \definecolor{darkgray}{gray}{0.6}
@@ -69,13 +69,13 @@
 {\color{black}\put(#3,2){\circle*{4}}\put(#1,2){\line(1,0){#2}}}\end{picture}}
 
 
-\definecolor{MyDarkBlue}{rgb}{0,0.08,0.45} 
+\definecolor{MyDarkBlue}{rgb}{0,0.08,0.45}
 \newenvironment{changed}{\par\color{MyDarkBlue}}{\par}
 %\newenvironment{changed}{\par}{\par}
 
 \newcommand{\ADD}[1]{\textcolor{MyDarkBlue}{{\bf #1}}}
 \usepackage{times}
-\pagenumbering{arabic} 
+\pagenumbering{arabic}
 
 % \usepackage[svgnames]{xcolor}
    \usepackage[framed]{ntheorem}
@@ -92,7 +92,7 @@
 \newcommand\thmbox[1]{%
   \noindent\begin{tikzpicture}%
   \node [thmbox] (box){%
-\begin{minipage}{.94\textwidth}%    
+\begin{minipage}{.94\textwidth}%
       \vspace{-3mm}#1\vspace{-3mm}%
     \end{minipage}%
   };%
@@ -100,33 +100,33 @@
 
 \let\theoremframecommand\thmbox
 \newshadedtheorem{lesson}{Research answer}
- 
- 
-\begin{document}  
+
+
+\begin{document}
 
 \definecolor{shadecolor}{gray}{0.9}
 \conferenceinfo{ASE}{'16 Singapore, Singapore.}
 
-\title{  Exploring ``Bellwether'' Effect in Software Engineering}
-\numberofauthors{2} 
-\author{  
+\title{  Exploring ``Bellwether'' Effect in Software Engineering Data Sets}
+\numberofauthors{2}
+\author{
 \alignauthor
 Rahul~Krishna, Tim Menzies  \\
        \affaddr{Computer Science, NC State, USA}\\
        {\{i.m.ralk,~tim.menzies\}@gmail.com}
 \alignauthor
 Lucas Layman \\
-       \affaddr{Fraunhofer CESE, College Park, USA}\\ 
+       \affaddr{Fraunhofer CESE, College Park, USA}\\
        {llayman@cese.fraunhofer.org}
 \setlength{\columnsep}{7mm}}
 \maketitle
 
-\begin{abstract} 
+\begin{abstract}
 
 {\bf Categories/Subject Descriptors:} D.2 [Software Engineering]; I.2 [Artificial Intelligence];
 
- 
-{\bf Keywords:} 
+
+{\bf Keywords:}
 \end{abstract}
 
 \section{Introduction}
@@ -178,16 +178,10 @@ new projects---at which time, we would loop to point \#1.
  lessons from the reference set to new projects.
 \end{enumerate}
 
-In this approach, the policies of the organization will be
-stable just as long as the reference set is not updated.
-In this paper, we do not address the pace of change in the reference set
-(that is left for future work).
-Rather, we focus on point \#3: transferring lessons from
-the reference set to new projects. To support this third point,
-we need to resolve the problems
- that this paper addresses (data expressed in different terminology
- cannot transfer till there is enough data to match old projects to new).
- 
+In this approach, the policies of the organization will be stable just as long as the reference set is not updated. In this paper, we do not address the pace of change in the reference set (that is left for future work). Rather, we focus on point \#3: transferring lessons from the reference set to new projects. To support this third point, we need to resolve the problems that this paper addresses (data expressed in different terminology cannot transfer till there is enough data to match old projects to new).
+
+\section{Motivation}
+There has been a general stride over the past three decades to incorporate lessons from within the company over the past to predict defects in on going projects. This form of defect prediction has been well studied \cite{1-7}
 \input{tex/Jur.tex}
 \balance
 \bibliographystyle{unsrt}

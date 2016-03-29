@@ -1,0 +1,32 @@
+\begin{thebibliography}{1}
+
+\bibitem{posnet11}
+Daryl Posnett, Vladimir Filkov, and Premkumar Devanbu.
+\newblock {Ecological inference in empirical software engineering}.
+\newblock In {\em 2011 26th IEEE/ACM International Conference on Automated
+  Software Engineering (ASE 2011)}, pages 362--371. IEEE, nov 2011.
+
+\bibitem{yang11}
+Ye~Yang, Lang Xie, Zhimin He, Qi~Li, Vu~Nguyen, Barry Boehm, and Ricardo
+  Valerdi.
+\newblock {Local bias and its impacts on the performance of parametric
+  estimation models}.
+\newblock In {\em Proceedings of the 7th International Conference on Predictive
+  Models in Software Engineering - Promise '11}, pages 1--10, New York, New
+  York, USA, 2011. ACM Press.
+
+\bibitem{Bettenburg2012}
+Nicolas Bettenburg, Meiyappan Nagappan, and Ahmed~E. Hassan.
+\newblock {Think locally, act globally: Improving defect and effort prediction
+  models}.
+\newblock In {\em 2012 9th IEEE Working Conference on Mining Software
+  Repositories (MSR)}, pages 60--69. IEEE, jun 2012.
+
+\bibitem{me12d}
+Tim Menzies, Andrew Butcher, Andrian Marcus, Thomas Zimmermann, and David Cok.
+\newblock {Local vs. global models for effort estimation and defect
+  prediction}.
+\newblock In {\em 2011 26th IEEE/ACM International Conference on Automated
+  Software Engineering (ASE 2011)}, pages 343--351. IEEE, nov 2011.
+
+\end{thebibliography}
